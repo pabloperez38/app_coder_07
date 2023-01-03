@@ -2,7 +2,7 @@ import { Button, ScrollView, Text, TextInput, View } from "react-native";
 
 import {ImageSelector} from '../../components/';
 import colors from '../../utils/colors';
-import {savePlace} from '../../store/place.slice';
+import { savePlace } from '../../store/place.slice';
 import { styles } from "./styles";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
@@ -11,6 +11,7 @@ const NewPlace = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
   const dispatch = useDispatch();
+
   const onHandleSubmit = () => {
 
     dispatch(savePlace({title, image}));
@@ -29,7 +30,7 @@ const NewPlace = ({ navigation }) => {
         <Text style={styles.titulo}>Título</Text>
         <TextInput style={styles.input} placeholder="Ingrese el lugar" onChangeText={onHandleChange} />
         <ImageSelector onImagePicker={onImagePicker} />
-        <Button color={colors.primary} title="Guardar dirección" onPress={onHandleSubmit}  />
+        <Button color={colors.primary} title="Guardar imagen" onPress={onHandleSubmit}  />
       </View>
     </ScrollView>
   );

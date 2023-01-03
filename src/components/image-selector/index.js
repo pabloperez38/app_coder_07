@@ -15,7 +15,7 @@ const ImageSelector = ({ onImagePicker }) => {
     const image = await ImagePicker.launchCameraAsync({
       allowsEditing: true,
       aspect: [16, 9],
-      quality: 0.8,
+      quality: 0.7,
     });
 
     setPickedUrl(image.uri);

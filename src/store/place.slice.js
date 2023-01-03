@@ -26,16 +26,16 @@ export const { addPlace } = placeSlice.actions;
 
 export const savePlace = ({ title, image }) => {
   return async (dispatch) => {
-    const fileName = image.split("/").pop();
-    const newpath = FileSystem.documentDirectory + fileName;
+    //const fileName = image.split("/").pop();
+    //const newPath = FileSystem.documentDirectory + fileName;
 
     try {
-      await FileSystem.moveAsync({ from: image, to: newpath });
+      //await FileSystem.moveAsync({ from: image, to: newPath });
     } catch (error) {
       console.log(error);
       throw error;
     }
-    dispatch(addPlace({ title, image: newpath }));
+    dispatch(addPlace({ title, image: image }));
   };
 };
 
