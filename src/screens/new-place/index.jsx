@@ -1,6 +1,6 @@
 import { Button, ScrollView, Text, TextInput, View } from "react-native";
+import {ImageSelector, LocationSelector} from '../../components/';
 
-import {ImageSelector} from '../../components/';
 import colors from '../../utils/colors';
 import { savePlace } from '../../store/place.slice';
 import { styles } from "./styles";
@@ -24,12 +24,14 @@ const NewPlace = ({ navigation }) => {
   const onImagePicker = (uri) => {
     setImage(uri);
   }
+  const onLocationPicker = ({lat, lng}) =>{}
   return (
     <ScrollView style={styles.container}>
       <View style={styles.contenido}>        
         <Text style={styles.titulo}>Título</Text>
         <TextInput style={styles.input} placeholder="Ingrese el lugar" onChangeText={onHandleChange} />
         <ImageSelector onImagePicker={onImagePicker} />
+        <LocationSelector onLocationPicker={onLocationPicker} />
         <Button color={colors.primary} title="Guardar imagen" onPress={onHandleSubmit}  />
       </View>
     </ScrollView>
