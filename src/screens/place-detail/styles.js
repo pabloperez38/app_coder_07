@@ -24,4 +24,6 @@ export const styles = StyleSheet.create({
     alignContent: "center",
     marginLeft: 0,
   },
+  titleContainer: { padding: 20 },
+  title: { fontSize: 20, fontWeight: "bold" },
 });

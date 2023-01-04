@@ -37,7 +37,7 @@ const NewPlace = ({ navigation}) => {
         <TextInput style={styles.input} placeholder="Ingrese el lugar" onChangeText={onHandleChange} />
         <ImageSelector onImagePicker={onImagePicker} />
         <LocationSelector onLocationPicker={onLocationPicker} />
-        <Button color={colors.primary} title="Guardar imagen" onPress={onHandleSubmit}  />
+        <Button color={colors.primary} title="Guardar dirección" onPress={onHandleSubmit}  />
       </View>
     </ScrollView>
   );
