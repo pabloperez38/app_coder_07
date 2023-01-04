@@ -21,5 +21,10 @@ export const styles = StyleSheet.create({
     alignItems: "flex-start",
     marginLeft: 15,
   },
-  title: { fontSize: 16, color: colors.text, marginBottom: 10 },
+  title: {
+    fontSize: 20,
+    color: colors.text,
+    marginBottom: 10,
+    fontWeight: "bold",
+  },
 });

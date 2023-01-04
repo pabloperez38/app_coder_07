@@ -7,14 +7,16 @@ import { styles } from "./styles";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
-const NewPlace = ({ navigation }) => {
+const NewPlace = ({ navigation}) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
+  const [coords, setCoords] = useState(null);
+
   const dispatch = useDispatch();
 
   const onHandleSubmit = () => {
 
-    dispatch(savePlace({title, image}));
+    dispatch(savePlace({title, image, coords}));
     navigation.navigate("Places");
 
   }
@@ -24,7 +26,10 @@ const NewPlace = ({ navigation }) => {
   const onImagePicker = (uri) => {
     setImage(uri);
   }
-  const onLocationPicker = ({lat, lng}) =>{}
+  const onLocationPicker = (location) =>{
+    
+    setCoords(location);
+  }
   return (
     <ScrollView style={styles.container}>
       <View style={styles.contenido}>        
