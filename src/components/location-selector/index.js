@@ -3,6 +3,7 @@ import * as Location from "expo-location";
 import { Alert, Button, Image, Text, View } from "react-native";
 import React, { useState } from "react";
 
+import MapPreview from "../map-preview";
 import colors from "../../utils/colors";
 import { styles } from "./styles";
 
@@ -41,12 +42,9 @@ const LocationSelector = ({ onLocationPicker }) => {
   return (
     <View style={styles.container}>
       <View style={styles.preview}>
-        {!pickedLocation ? (
-          <Text style={styles.title}>No hay ubicación seleccionada</Text>
-        ) : (
-          //<Image style={styles.image} />
-          <Text>{`latitud: ${pickedLocation.lat}, longitud: ${pickedLocation.lng}`}</Text>
-        )}
+        <MapPreview location={pickedLocation} style={styles.mapPreview}>
+          <Text style={styles.text}>No hay ubicación seleccionada</Text>
+        </MapPreview>
       </View>
       <Button
         title="Obtener ubicación"
